@@ -1,0 +1,9 @@
+services:
+  go:
+    build:
+      context: ..
+      dockerfile: docker/golang.Dockerfile
+    ports:
+      - "9090:9090"
+    volumes:
+      - ../:/go/src

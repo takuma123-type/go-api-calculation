@@ -1,0 +1,55 @@
+# Working directory
+root = "."
+tmp_dir = "./tmp"
+
+[build]
+# ビルドコマンド
+cmd = "go build -o ./tmp/main ./main.go"
+
+# バイナリの出力先
+bin = "./tmp/main"
+
+# Watch these filename extensions.
+include_ext = ["go"]
+
+# Ignore these filename extensions or directories.
+exclude_dir = ["tmp", "vendor"]
+
+# Exclude files.
+exclude_file = []
+
+# ビルド間隔
+delay = 1000 # ms
+
+# ビルドエラーが発生したら古いバイナリの実行を停止
+stop_on_error = true
+
+# プロセスを強制終了する前に割り込みシグナルを送信
+send_interrupt = false
+
+# 割り込み信号送信後の遅延
+kill_delay = 500  # ms
+
+[misc]
+# 終了時にtmpディレクトリを削除
+clean_on_exit = true
+
+[run]
+# 実行するコマンド
+cmd = "./tmp/main"
+
+# Watch these directories.
+watch_dir = ["."]
+
+# Watch these filename extensions.
+watch_ext = ["go"]
+
+# Ignore these directories.
+ignore = ["tmp", "vendor"]
+
+# Delay before running the command
+delay = 200 # ms
+
+[log]
+# ログレベル
+level = "debug"
